@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import {  setCount,removeItem } from '../redux'
-import './style.css'
+import {Tr, Td } from './style.js'
 /**
 * @author vimalkovath
 * @function Item
@@ -41,15 +41,16 @@ import './style.css'
     return loading ? (
         <h2>Loading...</h2>
     ) : (
-            <div className="priceRow tableRow" >
-                <span className="tableCell">{props.name} </span>
-                <span className="tableCell">
+                <Tr priceRow>
+                    <Td> {props.name} </Td>
+                    <Td>
                     <span>  <input type="number" min="0" value={qty} onChange={e=>onChange(e.target.value)}/>  </span>
-                </span>
-                <span className="tableCell">{props.price} </span>
-                <span className="tableCell Indtotal"><span>{props.currency}</span>{eachPrice(qty, props.price)}</span>
-                <span className="tableCell close" onClick={deleteItem}>x</span>
-            </div>
+                    </Td>
+                    <Td> {props.price} </Td>
+                    <Td Indtotal><span>{props.currency}</span>{eachPrice(qty, props.price)}</Td>
+                    <Td close onClick={deleteItem}>x</Td>
+                </Tr>
+               
         )
 
 }

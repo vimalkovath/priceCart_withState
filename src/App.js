@@ -9,39 +9,11 @@ import store from './redux/store'
 import PriceCart from './Components/PriceCart';
 
 import PriceCartShell from './Components/PriceCartShell';
+import PriceCartShellTask from './Components/PriceCartShellTask';
 
 
 function App() {
 
-
-  const [list, setList] = useState([]);
-
-  const content = useSelector(state => state); //this hook gives us redux store state
-  const dispatch = useDispatch(); //this hook gives us dispatch method
-
-//async action
-  function getData() {
-    return dispatch => {
-      dispatch({
-        type: "FETCH_DATA",
-        data: []
-      })
-
-      // axios.get("https://jsonplaceholder.typicode.com/todos/1")
-      // .then(res =>
-      //   dispatch({
-      //     type: "FETCH_DATA",
-      //     data: res.data
-      //   })
-      // );
-
-    };
-  }
-
-
-  useEffect(() => {
-    dispatch(getData());
-  }, []);
 
 
 
@@ -50,7 +22,8 @@ function App() {
      
      <Provider store={store}>
       {/* <PriceCart/> */}
-      <PriceCartShell/>
+      {/* <PriceCartShell/> */}
+      <PriceCartShellTask/>
     </Provider>
     
     </div>

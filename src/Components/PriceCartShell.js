@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchData, setCount,removeItem,clearQty } from '../redux'
-import './style.css'
 import { Container, Button,Error } from './style.js'
 import styled, { css } from 'styled-components'
 
