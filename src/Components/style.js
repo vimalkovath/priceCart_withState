@@ -18,3 +18,8 @@ export const Button = styled.button`
 export const Container = styled.div`
   text-align: center;
 `
+export const Error=styled.div`
+padding: 10px;
+color:red;
+font-weight: 600;
+`

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchData, setCount,removeItem,clearQty } from '../redux'
 import './style.css'
-import { Container, Button } from './style.js'
+import { Container, Button,Error } from './style.js'
 import styled, { css } from 'styled-components'
 
 /**
@@ -49,9 +49,15 @@ const PriceCartShell = (props) => {
                                 <span className="tableCell"> </span>
                             </div>
 
-                            {data.map((item, index) =>
+                            {(data.length>0)?(
+                                data.map((item, index) =>
                                 <Item {...item} key={index}> </Item>
-                            )}
+                                    )
+                            ):(
+                                <Error >No Items on Cart</Error>
+                               
+                            )
+                            }
 
                         </div>
 
@@ -94,8 +100,6 @@ const Item = (props) => {
     }
 
     const deleteItem=()=>{
-       console.log( props.SKU ,"sku")
-        // dispatch(setCount({ "SKU": props.SKU, "qty": val }));
         dispatch(removeItem({ "SKU": props.SKU }));
     }
 

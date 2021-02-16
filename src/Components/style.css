@@ -39,3 +39,10 @@
         padding: 10px;
         cursor: pointer;
     }
+
+    .Error{
+        padding: 10px;
+        color:red;
+        font-weight: 600;
+        
+    }
