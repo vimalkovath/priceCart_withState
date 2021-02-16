@@ -92,8 +92,6 @@ const Item = (props) => {
     }
 
     const deleteItem=()=>{
-       console.log( props.SKU ,"sku")
-        // dispatch(setCount({ "SKU": props.SKU, "qty": val }));
         dispatch(removeItem({ "SKU": props.SKU }));
     }
 

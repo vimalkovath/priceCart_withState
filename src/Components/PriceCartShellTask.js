@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchData, setCount, removeItem, clearQty } from '../redux'
 import { Container, ButtonChk, Error, Table, Tr, Td,Total,Span } from './style.js'
 import Item from './Item'
+import Modal from "react-modal";
+Modal.setAppElement("#root");
 
 /**
 * @author vimalkovath
@@ -14,7 +16,14 @@ const PriceCartShellTask = (props) => {
 
     const loading = useSelector(state => state.countries.loading)
     const data = useSelector(state => state.countries.data)
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+
+    const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    setIsOpen(!isOpen);
+  }
+
 
     useEffect(() => {
         dispatch(fetchData())
@@ -35,18 +44,24 @@ const PriceCartShellTask = (props) => {
             <>
                <Container>
 
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel="My dialog"
+        className="mymodal"
+        overlayClassName="myoverlay"
+        closeTimeoutMS={500}
+      >
+          <Container>
+          <div><b>{calculatePrice()} </b> <i>Amount Will be deducting from you</i> </div>
+          <br></br>
+        <ButtonChk primary onClick={toggleModal}> Click ok To Confirm </ButtonChk>
+        </Container>
+      </Modal>
 
                     <div className="priceTable">
                       
                         <Table>
-                            {/* <Tr priceRow>
-                                <Td> Name </Td>
-                                <Td> Qty </Td>
-                                <Td> Unit </Td>
-                                <Td> Total </Td>
-                                <Td></Td>
-                            </Tr> */}
-
                             
 
                             {(data.length > 0) ? (
@@ -64,7 +79,7 @@ const PriceCartShellTask = (props) => {
                             <Total>
                             <Span Bold>£{calculatePrice()}</Span>
                             <ButtonChk onClick={clearAll}>Clear</ButtonChk>
-                            <ButtonChk primary> {'Check Out >'}  </ButtonChk>
+                            <ButtonChk primary onClick={toggleModal}> {'Check Out >'}  </ButtonChk>
                             </Total>
                        
 
