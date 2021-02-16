@@ -21,8 +21,21 @@
     }
     .totalPart{
         padding: 20px 10px;
-        text-align: right;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     .totalPart span{
         font-weight: 600;
+    }
+    .Indtotal{
+        color:darkorange;
+        font-weight: 600;
+    }
+    .chkBtn{
+        color: #fff;
+        background: dodgerblue;
+        font-weight: 600;
+        padding: 10px;
+        cursor: pointer;
     }

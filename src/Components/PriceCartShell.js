@@ -11,7 +11,7 @@ import styled, { css } from 'styled-components'
 **/
 
 
-const PriceCart = (props) => {
+const PriceCartShell = (props) => {
 
     const loading = useSelector(state => state.countries.loading)
     const data = useSelector(state => state.countries.data)
@@ -44,6 +44,7 @@ const PriceCart = (props) => {
                             <div className="priceRow tableRow fb">
                                 <span className="tableCell">Name </span>
                                 <span className="tableCell">Qty </span>
+                                <span className="tableCell">unit </span>
                                 <span className="tableCell">Total </span>
                                 <span className="tableCell"> </span>
                             </div>
@@ -109,8 +110,9 @@ const Item = (props) => {
             <div className="priceRow tableRow" >
                 <span className="tableCell">{props.name} </span>
                 <span className="tableCell">
-                        <span>  <input type="number" min="0" value={qty} onChange={e=>onChange(e.target.value)}/>  </span>
-                     </span>
+                    <span>  <input type="number" min="0" value={qty} onChange={e=>onChange(e.target.value)}/>  </span>
+                </span>
+                <span className="tableCell">{props.price} </span>
                 <span className="tableCell Indtotal"><span>{props.currency}</span>{eachPrice(qty, props.price)}</span>
                 <span className="tableCell close" onClick={deleteItem}>x</span>
             </div>
@@ -118,4 +120,4 @@ const Item = (props) => {
 
 }
 
-export default PriceCart
+export default PriceCartShell

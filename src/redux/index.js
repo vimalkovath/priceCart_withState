@@ -1,1 +1,1 @@
-export { fetchData,setCount } from './actions'
+export { fetchData,setCount,removeItem,clearQty } from './actions'

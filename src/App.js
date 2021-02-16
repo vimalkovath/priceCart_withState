@@ -8,6 +8,8 @@ import { Provider } from 'react-redux'
 import store from './redux/store'
 import PriceCart from './Components/PriceCart';
 
+import PriceCartShell from './Components/PriceCartShell';
+
 
 function App() {
 
@@ -47,8 +49,8 @@ function App() {
     <div className="App">
      
      <Provider store={store}>
-      {/* <CountriesContainer /> */}
-      <PriceCart/>
+      {/* <PriceCart/> */}
+      <PriceCartShell/>
     </Provider>
     
     </div>
