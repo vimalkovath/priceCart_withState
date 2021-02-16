@@ -1,0 +1,28 @@
+
+    .priceRow{
+        padding: 10px;
+    border:1px;
+    display: flex;
+    justify-content: space-between;
+    }
+    .table{display: table;}
+    .tableRow{display: table-row;}
+    .tableCell{display: table-cell;padding: 10px; text-align: start;}
+
+
+    .priceTable{
+    /* width: 200px; */
+    }
+
+    .qtyBtn{
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 5px;
+    }
+    .totalPart{
+        padding: 20px 10px;
+        text-align: right;
+    }
+    .totalPart span{
+        font-weight: 600;
+    }

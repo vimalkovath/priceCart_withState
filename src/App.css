@@ -1,12 +1,22 @@
 .App {
-  text-align: center;
+  padding: 20px;
+ 
+  border: 1px solid #ccc;
+}
+#root{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fb{
+  font-weight: 600;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,body{
+  height:100%;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
